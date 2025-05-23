@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
@@ -19,5 +20,20 @@ public class AlumnoService
         }
 
         return Alumnos;
+    }
+
+    public bool EliminarAlumno(int idAlumno)
+    {
+        var resultado = true;
+        try
+        {
+            AlumnoCRUD.DeleteAlumno(idAlumno);
+        }
+        catch (Exception)
+        {
+            resultado = false;
+        }
+
+        return resultado;
     }
 }

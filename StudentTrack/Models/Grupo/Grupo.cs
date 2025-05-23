@@ -9,6 +9,11 @@ public class Grupo : ObservableObject
     public ObservableCollection<Alumno> Alumnos { get; set; } = [];
 
     public Grupo() {}
+    public Grupo(string nombre, int idCurso)
+    {
+        Nombre = nombre;
+        IdCurso = idCurso;
+    }
 
     public Grupo(GrupoEntity grupoEntity)
     {

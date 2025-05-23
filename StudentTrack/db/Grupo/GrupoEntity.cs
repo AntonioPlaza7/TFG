@@ -1,4 +1,5 @@
-public class GrupoEntity {
+public class GrupoEntity
+{
     public int Id { get; set; }
     public string Nombre { get; set; }
     public int IdCurso { get; set; }
@@ -14,5 +15,12 @@ public class GrupoEntity {
     {
         Nombre = nombre;
         IdCurso = idCurso;
+    }
+    
+    public GrupoEntity(Grupo grupo)
+    {
+        Id = grupo.Id;
+        Nombre = grupo.Nombre;
+        IdCurso = grupo.IdCurso;
     }
 }
