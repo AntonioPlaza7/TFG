@@ -1,0 +1,93 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:StudentTrack.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="StudentTrack.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="StudentTrack">
+
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+    <!--<Grid ColumnDefinitions="*,*,*" RowDefinitions="Auto,Auto,Auto"  Margin="4">
+        <TextBlock Text="Col0Row0:" Grid.Row="0" Grid.Column="0"/>
+        <TextBlock Text="Col0Row1:" Grid.Row="1" Grid.Column="0"/>
+        <TextBlock Text="Col0Row2:" Grid.Row="2" Grid.Column="0"/>
+        <CheckBox Content="Col2Row0" Grid.Row="0" Grid.Column="2"/>
+        <Button Content="SpansCol1-2Row1-2" Grid.Row="1" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+    </Grid>-->
+
+    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- DAM -->
+            <Border Grid.Column="0" Margin="10" Padding="10"
+                    Background="#222" CornerRadius="10"
+                    BoxShadow="0 0 10 2 #444">
+                <StackPanel>
+                    <TextBlock Text="DAM" FontSize="20" FontWeight="Bold"
+                            HorizontalAlignment="Center" Margin="0,0,0,10" Foreground="White"/>
+                    <ItemsControl ItemsSource="{Binding Cursos[0].Grupos}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Border BorderBrush="White" BorderThickness="1" Margin="2" Padding="5">
+                                    <TextBlock Text="{Binding Nombre}" Foreground="White"/>
+                                </Border>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </StackPanel>
+            </Border>
+
+            <!-- DAW -->
+            <Border Grid.Column="1" Margin="10" Padding="10"
+                    Background="#222" CornerRadius="10"
+                    BoxShadow="0 0 10 2 #444">
+                <StackPanel>
+                    <TextBlock Text="DAW" FontSize="20" FontWeight="Bold"
+                            HorizontalAlignment="Center" Margin="0,0,0,10" Foreground="White"/>
+                    <ItemsControl ItemsSource="{Binding Cursos[1].Grupos}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Border BorderBrush="White" BorderThickness="1" Margin="2" Padding="5">
+                                    <TextBlock Text="{Binding Nombre}" Foreground="White"/>
+                                </Border>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </StackPanel>
+            </Border>
+
+            <!-- ASIR -->
+            <Border Grid.Column="2" Margin="10" Padding="10"
+                    Background="#222" CornerRadius="10"
+                    BoxShadow="0 0 10 2 #444">
+                <StackPanel>
+                    <TextBlock Text="ASIR" FontSize="20" FontWeight="Bold"
+                            HorizontalAlignment="Center" Margin="0,0,0,10" Foreground="White"/>
+                    <ItemsControl ItemsSource="{Binding Cursos[2].Grupos}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Border BorderBrush="White" BorderThickness="1" Margin="2" Padding="5">
+                                    <TextBlock Text="{Binding Nombre}" Foreground="White"/>
+                                </Border>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </StackPanel>
+            </Border>
+        </Grid>
+    </ScrollViewer>
+
+</Window>
