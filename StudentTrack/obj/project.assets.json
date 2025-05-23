@@ -2091,11 +2091,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/antonio/repositorios/StudentTrack/StudentTrack/StudentTrack.csproj",
+      "projectUniqueName": "/home/antonio/repositorios/TFG/StudentTrack/StudentTrack.csproj",
       "projectName": "StudentTrack",
-      "projectPath": "/home/antonio/repositorios/StudentTrack/StudentTrack/StudentTrack.csproj",
+      "projectPath": "/home/antonio/repositorios/TFG/StudentTrack/StudentTrack.csproj",
       "packagesPath": "/home/antonio/.nuget/packages/",
-      "outputPath": "/home/antonio/repositorios/StudentTrack/StudentTrack/obj/",
+      "outputPath": "/home/antonio/repositorios/TFG/StudentTrack/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/antonio/.nuget/NuGet/NuGet.Config"

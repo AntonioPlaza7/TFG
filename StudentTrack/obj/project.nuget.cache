@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sDP/QSdQcFA=",
+  "dgSpecHash": "3xIL+zsFzrE=",
   "success": true,
-  "projectFilePath": "/home/antonio/repositorios/StudentTrack/StudentTrack/StudentTrack.csproj",
+  "projectFilePath": "/home/antonio/repositorios/TFG/StudentTrack/StudentTrack.csproj",
   "expectedPackageFiles": [
     "/home/antonio/.nuget/packages/automapper/14.0.0/automapper.14.0.0.nupkg.sha512",
     "/home/antonio/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.1/automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
