@@ -3,14 +3,18 @@
         xmlns:vm="using:StudentTrack.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="200"
+        mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="250"
         x:Class="StudentTrack.Views.GrupoWindow"
         x:DataType="vm:GrupoWindowViewModel"
-        Title="Nuevo Grupo" Width="300" Height="200">
+        Title="Nuevo Grupo" Width="300" Height="250">
     
     <StackPanel Margin="20" Spacing="10">
         <TextBlock Text="Nombre del grupo"/>
         <TextBox Name="NombreGrupoTextBox" Text="{Binding Grupo.Nombre, Mode=TwoWay}" />
+        <TextBlock Text="Curso" IsVisible="{Binding IsEdicion}"/>
+        <ComboBox Name="Curso" ItemsSource="{Binding Cursos}"
+            SelectedItem="{Binding CursoSeleccionado, Mode=TwoWay}"
+            DisplayMemberBinding="{Binding Nombre}" IsVisible="{Binding IsEdicion}"/>
         <Button Content="Insertar" HorizontalAlignment="Right" Click="OnInsertarClick" IsVisible="{Binding !IsEdicion}"/>
         <Button Content="Editar" HorizontalAlignment="Right" Click="OnEditarClick" IsVisible="{Binding IsEdicion}"/>
     </StackPanel>
