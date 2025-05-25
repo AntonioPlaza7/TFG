@@ -1,27 +1,32 @@
-﻿using System.Collections.ObjectModel;
+﻿using System.Windows.Input;
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
+using StudentTrack.Models.Grupo;
 
 namespace StudentTrack.ViewModels;
 
 public partial class MainWindowViewModel : ViewModelBase
 {
-    public ObservableCollection<Curso> Cursos { get; } = [];
-    public GrupoService grupoService = new();
+    [ObservableProperty]
+    private ViewModelBase _currentContentViewModel;
 
     public MainWindowViewModel()
     {
-        Cursos = new ObservableCollection<Curso>(
-            new CursoService().ListCursos()
-        );
+        _currentContentViewModel = new CursoWindowViewModel();
     }
 
-    public void RecargarCursos()
+    [RelayCommand]
+    private void NavigateBack()
     {
-        var nuevosCursos = new CursoService().ListCursos();
-
-        Cursos.Clear();
-        foreach (var curso in nuevosCursos)
+        CurrentContentViewModel = new CursoWindowViewModel();
+    }
+    
+    [RelayCommand]
+    private void NavigateToAdminGrupo(GrupoDTO grupo)
+    {
+        if (grupo != null)
         {
-            Cursos.Add(curso);
+            CurrentContentViewModel = new AdminGrupoWindowViewModel(grupo);
         }
     }
 }

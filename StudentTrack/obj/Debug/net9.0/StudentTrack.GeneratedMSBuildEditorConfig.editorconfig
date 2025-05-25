@@ -24,6 +24,18 @@ build_property.EnableCodeStyleSeverity =
 [/home/antonio/repositorios/TFG/StudentTrack/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[/home/antonio/repositorios/TFG/StudentTrack/Views/AdminGrupoWindowView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/antonio/repositorios/TFG/StudentTrack/Views/AlumnoDataWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/antonio/repositorios/TFG/StudentTrack/Views/AlumnoWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/antonio/repositorios/TFG/StudentTrack/Views/CursoWindowView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [/home/antonio/repositorios/TFG/StudentTrack/Views/EliminarWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 

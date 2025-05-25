@@ -1,4 +1,6 @@
 using System;
+using StudentTrack.Models.Alumno;
+namespace StudentTrack.db.Alumno;
 
 public class AlumnoEntity
 {
@@ -27,6 +29,16 @@ public class AlumnoEntity
         Telefono = telefono;
         IdGrupo = idGrupo;
 
+    }
+    
+    public AlumnoEntity(AlumnoDTO alumno)
+    {
+        Id = alumno.Id;
+        Nombre = alumno.Nombre;
+        Apellidos = alumno.Apellidos;
+        Email = alumno.Email;
+        Telefono = alumno.Telefono;
+        IdGrupo = alumno.IdGrupo;
     }
 
     public override String ToString()

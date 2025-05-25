@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using StudentTrack.db.Curso;
 
 public class CursoCRUD() {
     public List<CursoEntity> ListCursos() {
@@ -16,7 +17,7 @@ public class CursoCRUD() {
                 reader.GetString(1)
             ));
         }
-
+        Connector.CloseConnection(connection);
         return cursos;
     }
     public CursoEntity? GetCurso(int Id) {
@@ -29,12 +30,16 @@ public class CursoCRUD() {
         using var reader = command.ExecuteReader();
         if (reader.Read())
         {
-            return new CursoEntity(
+            var cursoEntity = new CursoEntity(
                 reader.GetInt32(0),
                 reader.GetString(1)
             );
-        }
+            
+            Connector.CloseConnection(connection);
 
+            return cursoEntity;
+        }
+        Connector.CloseConnection(connection);  
         return null;
     }
 }

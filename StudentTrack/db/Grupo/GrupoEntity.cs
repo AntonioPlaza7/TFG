@@ -1,3 +1,7 @@
+using StudentTrack.Models.Grupo;
+
+namespace StudentTrack.db.Grupo;
+
 public class GrupoEntity
 {
     public int Id { get; set; }
@@ -17,7 +21,7 @@ public class GrupoEntity
         IdCurso = idCurso;
     }
     
-    public GrupoEntity(Grupo grupo)
+    public GrupoEntity(GrupoDTO grupo)
     {
         Id = grupo.Id;
         Nombre = grupo.Nombre;

@@ -1,0 +1,28 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:StudentTrack.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="250"
+        x:Class="StudentTrack.Views.AlumnoWindow"
+        x:DataType="vm:AlumnoWindowViewModel"
+        Title="Nuevo Alumno" Width="300" Height="400">
+    
+    <StackPanel Margin="20" Spacing="10">
+        <TextBlock Text="Nombre del alumno"/>
+        <TextBox Name="NombreAlumnoTextBox" Text="{Binding Alumno.Nombre, Mode=TwoWay}" />
+        <TextBlock Text="Apellidos del alumno"/>
+        <TextBox Name="ApellidosAlumnoTextBox" Text="{Binding Alumno.Apellidos, Mode=TwoWay}" />
+        <TextBlock Text="Email del alumno"/>
+        <TextBox Name="EmailAlumnoTextBox" Text="{Binding Alumno.Email, Mode=TwoWay}" />
+        <TextBlock Text="Telefono del alumno"/>
+        <TextBox Name="TelefonoAlumnoTextBox" Text="{Binding Alumno.Telefono, Mode=TwoWay}" />
+        <TextBlock Text="Grupo" IsVisible="{Binding IsEdicion}"/>
+        <ComboBox Name="Grupo" ItemsSource="{Binding Grupos}"
+            SelectedItem="{Binding GrupoSeleccionado, Mode=TwoWay}"
+            DisplayMemberBinding="{Binding Nombre}" IsVisible="{Binding IsEdicion}"/>
+        <Button Content="Insertar" HorizontalAlignment="Right" Click="OnInsertarClick" IsVisible="{Binding !IsEdicion}"/>
+        <Button Content="Editar" HorizontalAlignment="Right" Click="OnEditarClick" IsVisible="{Binding IsEdicion}"/>
+    </StackPanel>
+
+</Window>

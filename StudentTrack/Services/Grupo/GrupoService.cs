@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using StudentTrack.db.Grupo;
+using StudentTrack.Models.Grupo;
 
 public class GrupoService
 {
@@ -11,18 +12,35 @@ public class GrupoService
         GrupoCRUD = new GrupoCRUD();
     }
 
-    public List<Grupo> ListGrupos(int IdCurso)
+    public List<GrupoDTO> ListGrupos()
     {
-        List<Grupo> Grupos = new List<Grupo>();
-        foreach (var GrupoEntity in GrupoCRUD.ListGrupos(IdCurso))
+        List<GrupoDTO> Grupos = new List<GrupoDTO>();
+        foreach (var GrupoEntity in GrupoCRUD.ListGrupos())
         {
-            Grupos.Add(new Grupo(GrupoEntity));
+            Grupos.Add(new GrupoDTO(GrupoEntity));
         }
 
         return Grupos;
     }
 
-    public bool InsertarGrupo(Grupo grupo)
+    public GrupoDTO GetGrupo(int id)
+    {
+        var grupoEntity = GrupoCRUD.GetGrupo(id);
+        return grupoEntity != null ? new GrupoDTO(grupoEntity) : new GrupoDTO();
+    }
+
+    public List<GrupoDTO> ListGrupos(int IdCurso)
+    {
+        List<GrupoDTO> Grupos = new List<GrupoDTO>();
+        foreach (var GrupoEntity in GrupoCRUD.ListGrupos(IdCurso))
+        {
+            Grupos.Add(new GrupoDTO(GrupoEntity));
+        }
+
+        return Grupos;
+    }
+
+    public bool InsertarGrupo(GrupoDTO grupo)
     {
         var resultado = true;
         try
@@ -37,7 +55,7 @@ public class GrupoService
         return resultado;
     }
 
-    public bool EditarGrupo(Grupo grupo)
+    public bool EditarGrupo(GrupoDTO grupo)
     {
         var resultado = true;
         try

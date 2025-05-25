@@ -1,12 +1,14 @@
 using Avalonia.Controls;
 using Avalonia.Interactivity;
+using StudentTrack.Models;
+using StudentTrack.Models.Grupo;
 using StudentTrack.ViewModels;
 
 namespace StudentTrack.Views;
 
 public partial class GrupoWindow : Window
 {
-    private Grupo _grupo;
+    private GrupoDTO _grupo;
     private int _cursoId;
     private GrupoService grupoService = new();
     public GrupoWindowViewModel ViewModel { get; private set; }
@@ -15,10 +17,10 @@ public partial class GrupoWindow : Window
     {
         InitializeComponent();
         _cursoId = cursoId;
-        ViewModel = new GrupoWindowViewModel(false, new Grupo());
+        ViewModel = new GrupoWindowViewModel(false, new GrupoDTO());
         DataContext = ViewModel;
     }
-    public GrupoWindow(Grupo grupo)
+    public GrupoWindow(GrupoDTO grupo)
     {
         InitializeComponent();
         _grupo = grupo;
@@ -32,7 +34,7 @@ public partial class GrupoWindow : Window
         var NombreGrupo = this.FindControl<TextBox>("NombreGrupoTextBox");
         if (NombreGrupo != null)
         {
-            resultado = grupoService.InsertarGrupo(new Grupo(NombreGrupo.Text, _cursoId));
+            resultado = grupoService.InsertarGrupo(new GrupoDTO(NombreGrupo.Text, _cursoId));
         }
         Close(resultado);
     }

@@ -5,6 +5,7 @@ using System.Linq;
 using Avalonia.Markup.Xaml;
 using StudentTrack.ViewModels;
 using StudentTrack.Views;
+using Avalonia.Controls;
 
 namespace StudentTrack;
 

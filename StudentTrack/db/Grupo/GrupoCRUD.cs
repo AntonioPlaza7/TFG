@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using StudentTrack.db.Grupo;
 
 public class GrupoCRUD() {
     public void InsertGrupo(GrupoEntity Grupo) {

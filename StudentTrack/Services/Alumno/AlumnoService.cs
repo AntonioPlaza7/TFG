@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using StudentTrack.db.Alumno;
+using StudentTrack.Models.Alumno;
 
 public class AlumnoService
 {
@@ -11,15 +12,45 @@ public class AlumnoService
         AlumnoCRUD = new AlumnoCRUD();
     }
 
-    public List<Alumno> ListAlumnos(int Id)
+    public List<AlumnoDTO> ListAlumnos(int Id)
     {
-        List<Alumno> Alumnos = new List<Alumno>();
+        List<AlumnoDTO> Alumnos = new List<AlumnoDTO>();
         foreach (var AlumnoEntity in AlumnoCRUD.ListAlumnos(Id))
         {
-            Alumnos.Add(new Alumno(AlumnoEntity));
+            Alumnos.Add(new AlumnoDTO(AlumnoEntity));
         }
 
         return Alumnos;
+    }
+
+    public bool InsertarAlumno(AlumnoDTO Alumno)
+    {
+        var resultado = true;
+        try
+        {
+            AlumnoCRUD.InsertAlumno(new AlumnoEntity(Alumno));
+        }
+        catch (Exception ex)
+        {
+            resultado = false;
+        }
+
+        return resultado;
+    }
+
+    public bool EditarAlumno(AlumnoDTO Alumno)
+    {
+        var resultado = true;
+        try
+        {
+            AlumnoCRUD.UpdateAlumno(new AlumnoEntity(Alumno));
+        }
+        catch (Exception)
+        {
+            resultado = false;
+        }
+
+        return resultado;
     }
 
     public bool EliminarAlumno(int idAlumno)

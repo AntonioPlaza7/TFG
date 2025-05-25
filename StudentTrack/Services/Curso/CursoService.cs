@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using StudentTrack.Models;
+using StudentTrack.Models.Curso;
 
 public class CursoService
 {
@@ -8,12 +10,12 @@ public class CursoService
         CursoCRUD = new CursoCRUD();
     }
 
-    public List<Curso> ListCursos()
+    public List<CursoDTO> ListCursos()
     {
-        List<Curso> cursos = new List<Curso>();
+        List<CursoDTO> cursos = new List<CursoDTO>();
         foreach (var cursoEntity in CursoCRUD.ListCursos())
         {
-            cursos.Add(new Curso(cursoEntity));
+            cursos.Add(new CursoDTO(cursoEntity));
         }
 
         return cursos;

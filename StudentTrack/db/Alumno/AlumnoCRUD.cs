@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using StudentTrack.db.Alumno;
 
 public class AlumnoCRUD() {
     public void InsertAlumno(AlumnoEntity Alumno)

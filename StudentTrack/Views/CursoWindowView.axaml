@@ -1,0 +1,89 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:StudentTrack.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+        xmlns:cursoModels="using:StudentTrack.Models.Curso"   
+        xmlns:grupoModels="using:StudentTrack.Models.Grupo" 
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="StudentTrack.Views.CursoWindowView"
+        x:DataType="vm:CursoWindowViewModel">
+        
+    <UserControl.Styles>
+        <Style Selector="Border.GrupoItem">
+            <Setter Property="Background" Value="Transparent"/>
+        </Style>
+        <Style Selector="Border.GrupoItem:pointerover">
+            <Setter Property="Background" Value="White"/>
+        </Style>
+        <Style Selector="Border.GrupoItem:pointerover TextBlock">
+            <Setter Property="Foreground" Value="Black"/>
+        </Style>
+        <Style Selector="Border.GrupoItem materialIcons|MaterialIcon">
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+        <Style Selector="Border.GrupoItem:pointerover materialIcons|MaterialIcon">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Background" Value="Gray"/>
+            <Setter Property="Cursor" Value="Hand"/>
+        </Style>
+    </UserControl.Styles>
+
+    <ItemsControl ItemsSource="{Binding Cursos}">
+        <ItemsControl.ItemsPanel>
+            <ItemsPanelTemplate>
+                <UniformGrid Columns="3" />
+            </ItemsPanelTemplate>
+        </ItemsControl.ItemsPanel>
+
+        <ItemsControl.ItemTemplate>
+            <DataTemplate x:DataType="cursoModels:CursoDTO"> 
+                <Border Margin="10" Padding="10"
+                        Background="#222" CornerRadius="10"
+                        BoxShadow="0 0 10 2 #444">
+                    <StackPanel>
+
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,10">
+                            <TextBlock Text="{Binding Nombre}" FontSize="20" FontWeight="Bold" Foreground="White" Margin="0,0,10,0"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,0,10">
+                            <Button Content="➕ Grupo" Click="AbrirGrupoWindow" Tag="{Binding Id}"/> 
+                        </StackPanel>
+
+                        <ItemsControl ItemsSource="{Binding Grupos}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate x:DataType="grupoModels:GrupoDTO"> 
+                                    <Border Classes="GrupoItem" BorderBrush="White" BorderThickness="1" 
+                                        Margin="2" Padding="5" PointerPressed="CargarAdminGrupoView" CornerRadius="10">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="Auto" />
+                                            </Grid.ColumnDefinitions>
+
+                                            <StackPanel Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" Spacing="5">
+                                                <TextBlock Name="GrupoNombreItem" Text="{Binding Nombre}"/>
+                                            </StackPanel>
+
+                                            <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="5" HorizontalAlignment="Right" VerticalAlignment="Center">
+                                                <Button Width="20" Height="20" ToolTip.Tip="Editar" Click="AbrirGrupoWindow" Tag="{Binding}">
+                                                    <materialIcons:MaterialIcon Kind="Pencil" />
+                                                </Button>
+                                                <Button Width="20" Height="20" ToolTip.Tip="Eliminar" Click="AbrirEliminarWindow" Tag="{Binding Id}">
+                                                    <materialIcons:MaterialIcon Kind="Bin" />
+                                                </Button>
+                                            </StackPanel>
+                                        </Grid>
+                                    </Border>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+
+                    </StackPanel>
+                </Border>
+            </DataTemplate>
+        </ItemsControl.ItemTemplate>
+    </ItemsControl>
+
+</UserControl>
