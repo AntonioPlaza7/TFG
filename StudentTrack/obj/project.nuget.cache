@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Rx3DlKWDHZ8=",
+  "dgSpecHash": "cZGxHr4xSBQ=",
   "success": true,
   "projectFilePath": "/home/antonio/repositorios/TFG/StudentTrack/StudentTrack.csproj",
   "expectedPackageFiles": [
@@ -49,7 +49,10 @@
     "/home/antonio/.nuget/packages/sqlitepclraw.provider.e_sqlite3/2.1.10/sqlitepclraw.provider.e_sqlite3.2.1.10.nupkg.sha512",
     "/home/antonio/.nuget/packages/system.io.pipelines/8.0.0/system.io.pipelines.8.0.0.nupkg.sha512",
     "/home/antonio/.nuget/packages/system.memory/4.5.3/system.memory.4.5.3.nupkg.sha512",
-    "/home/antonio/.nuget/packages/tmds.dbus.protocol/0.21.2/tmds.dbus.protocol.0.21.2.nupkg.sha512"
+    "/home/antonio/.nuget/packages/tmds.dbus.protocol/0.21.2/tmds.dbus.protocol.0.21.2.nupkg.sha512",
+    "/home/antonio/.nuget/packages/microsoft.netcore.app.runtime.linux-x64/9.0.5/microsoft.netcore.app.runtime.linux-x64.9.0.5.nupkg.sha512",
+    "/home/antonio/.nuget/packages/microsoft.aspnetcore.app.runtime.linux-x64/9.0.5/microsoft.aspnetcore.app.runtime.linux-x64.9.0.5.nupkg.sha512",
+    "/home/antonio/.nuget/packages/microsoft.netcore.app.host.linux-x64/9.0.5/microsoft.netcore.app.host.linux-x64.9.0.5.nupkg.sha512"
   ],
   "logs": [
     {
@@ -59,7 +62,8 @@
       "message": "Detected package version outside of dependency constraint: AutoMapper.Extensions.Microsoft.DependencyInjection 12.0.1 requires AutoMapper (= 12.0.1) but version AutoMapper 14.0.0 was resolved.",
       "libraryId": "AutoMapper",
       "targetGraphs": [
-        "net9.0"
+        "net9.0",
+        "net9.0/linux-x64"
       ]
     }
   ]

@@ -11,6 +11,11 @@ public partial class EliminarWindow : Window
     private GrupoService grupoService = new();
     private AlumnoService alumnoService = new();
 
+    public EliminarWindow() 
+    { 
+        InitializeComponent();
+    }
+
     public EliminarWindow(string accion, int id)
     {
         InitializeComponent();

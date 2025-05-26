@@ -13,6 +13,11 @@ public partial class GrupoWindow : Window
     private GrupoService grupoService = new();
     public GrupoWindowViewModel ViewModel { get; private set; }
 
+    public GrupoWindow()
+    { 
+        InitializeComponent();
+    }
+
     public GrupoWindow(int cursoId)
     {
         InitializeComponent();

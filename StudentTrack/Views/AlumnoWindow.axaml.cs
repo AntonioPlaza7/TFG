@@ -12,6 +12,11 @@ public partial class AlumnoWindow : Window
     private AlumnoService AlumnoService = new();
     public AlumnoWindowViewModel ViewModel { get; private set; }
 
+    public AlumnoWindow() 
+    { 
+        InitializeComponent();
+    }
+
     public AlumnoWindow(int grupoId)
     {
         InitializeComponent();

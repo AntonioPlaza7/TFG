@@ -9,6 +9,11 @@ public partial class AlumnoDataWindow : Window
 {
     public AlumnoDataWindowViewModel ViewModel { get; private set; }
 
+    public AlumnoDataWindow() 
+    { 
+        InitializeComponent();
+    }
+
     public AlumnoDataWindow(AlumnoDTO alumno)
     {
         InitializeComponent();
