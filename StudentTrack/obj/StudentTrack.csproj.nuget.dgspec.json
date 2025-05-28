@@ -87,12 +87,6 @@
               "target": "Package",
               "version": "[9.0.4, )"
             },
-            "Microsoft.NET.ILLink.Tasks": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[9.0.5, )",
-              "autoReferenced": true
-            },
             "sqlite-net-pcl": {
               "target": "Package",
               "version": "[1.9.172, )"
