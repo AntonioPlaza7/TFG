@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "LWC42O2tuoA=",
+  "dgSpecHash": "GELInZVBrv4=",
   "success": true,
   "projectFilePath": "/home/antonio/repositorios/TFG/StudentTrack/StudentTrack.csproj",
   "expectedPackageFiles": [
@@ -36,6 +36,7 @@
     "/home/antonio/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.0/microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
     "/home/antonio/.nuget/packages/microsoft.extensions.options/8.0.0/microsoft.extensions.options.8.0.0.nupkg.sha512",
     "/home/antonio/.nuget/packages/microsoft.extensions.primitives/8.0.0/microsoft.extensions.primitives.8.0.0.nupkg.sha512",
+    "/home/antonio/.nuget/packages/microsoft.net.illink.tasks/9.0.5/microsoft.net.illink.tasks.9.0.5.nupkg.sha512",
     "/home/antonio/.nuget/packages/skiasharp/2.88.9/skiasharp.2.88.9.nupkg.sha512",
     "/home/antonio/.nuget/packages/skiasharp.nativeassets.linux/2.88.9/skiasharp.nativeassets.linux.2.88.9.nupkg.sha512",
     "/home/antonio/.nuget/packages/skiasharp.nativeassets.macos/2.88.9/skiasharp.nativeassets.macos.2.88.9.nupkg.sha512",
@@ -50,9 +51,9 @@
     "/home/antonio/.nuget/packages/system.io.pipelines/8.0.0/system.io.pipelines.8.0.0.nupkg.sha512",
     "/home/antonio/.nuget/packages/system.memory/4.5.3/system.memory.4.5.3.nupkg.sha512",
     "/home/antonio/.nuget/packages/tmds.dbus.protocol/0.21.2/tmds.dbus.protocol.0.21.2.nupkg.sha512",
-    "/home/antonio/.nuget/packages/microsoft.netcore.app.runtime.win-x64/9.0.5/microsoft.netcore.app.runtime.win-x64.9.0.5.nupkg.sha512",
-    "/home/antonio/.nuget/packages/microsoft.aspnetcore.app.runtime.win-x64/9.0.5/microsoft.aspnetcore.app.runtime.win-x64.9.0.5.nupkg.sha512",
-    "/home/antonio/.nuget/packages/microsoft.netcore.app.host.win-x64/9.0.5/microsoft.netcore.app.host.win-x64.9.0.5.nupkg.sha512"
+    "/home/antonio/.nuget/packages/microsoft.netcore.app.runtime.linux-x64/9.0.5/microsoft.netcore.app.runtime.linux-x64.9.0.5.nupkg.sha512",
+    "/home/antonio/.nuget/packages/microsoft.aspnetcore.app.runtime.linux-x64/9.0.5/microsoft.aspnetcore.app.runtime.linux-x64.9.0.5.nupkg.sha512",
+    "/home/antonio/.nuget/packages/microsoft.netcore.app.host.linux-x64/9.0.5/microsoft.netcore.app.host.linux-x64.9.0.5.nupkg.sha512"
   ],
   "logs": [
     {
@@ -63,7 +64,7 @@
       "libraryId": "AutoMapper",
       "targetGraphs": [
         "net9.0",
-        "net9.0/win-x64"
+        "net9.0/linux-x64"
       ]
     }
   ]

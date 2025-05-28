@@ -599,6 +599,12 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
+      "Microsoft.NET.ILLink.Tasks/9.0.5": {
+        "type": "package",
+        "build": {
+          "build/Microsoft.NET.ILLink.Tasks.props": {}
+        }
+      },
       "SkiaSharp/2.88.9": {
         "type": "package",
         "dependencies": {
@@ -899,7 +905,7 @@
         }
       }
     },
-    "net9.0/win-x64": {
+    "net9.0/linux-x64": {
       "AutoMapper/14.0.0": {
         "type": "package",
         "dependencies": {
@@ -1012,10 +1018,7 @@
         }
       },
       "Avalonia.Angle.Windows.Natives/2.1.22045.20230930": {
-        "type": "package",
-        "native": {
-          "runtimes/win-x64/native/av_libglesv2.dll": {}
-        }
+        "type": "package"
       },
       "Avalonia.BuildServices/0.0.31": {
         "type": "package",
@@ -1296,6 +1299,9 @@
         },
         "runtime": {
           "lib/net6.0/_._": {}
+        },
+        "native": {
+          "runtimes/linux-x64/native/libHarfBuzzSharp.so": {}
         }
       },
       "HarfBuzzSharp.NativeAssets.macOS/7.3.0.3": {
@@ -1327,9 +1333,6 @@
         },
         "runtime": {
           "lib/net6.0/_._": {}
-        },
-        "native": {
-          "runtimes/win-x64/native/libHarfBuzzSharp.dll": {}
         }
       },
       "Material.Icons/2.4.1": {
@@ -1445,6 +1448,12 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
+      "Microsoft.NET.ILLink.Tasks/9.0.5": {
+        "type": "package",
+        "build": {
+          "build/Microsoft.NET.ILLink.Tasks.props": {}
+        }
+      },
       "SkiaSharp/2.88.9": {
         "type": "package",
         "dependencies": {
@@ -1472,6 +1481,9 @@
         },
         "runtime": {
           "lib/net6.0/_._": {}
+        },
+        "native": {
+          "runtimes/linux-x64/native/libSkiaSharp.so": {}
         }
       },
       "SkiaSharp.NativeAssets.macOS/2.88.9": {
@@ -1503,9 +1515,6 @@
         },
         "runtime": {
           "lib/net6.0/_._": {}
-        },
-        "native": {
-          "runtimes/win-x64/native/libSkiaSharp.dll": {}
         }
       },
       "sqlite-net-pcl/1.9.172": {
@@ -1571,7 +1580,7 @@
           "lib/netstandard2.0/_._": {}
         },
         "native": {
-          "runtimes/win-x64/native/e_sqlite3.dll": {}
+          "runtimes/linux-x64/native/libe_sqlite3.so": {}
         },
         "build": {
           "buildTransitive/net9.0/SQLitePCLRaw.lib.e_sqlite3.targets": {}
@@ -2488,6 +2497,40 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "Microsoft.NET.ILLink.Tasks/9.0.5": {
+      "sha512": "n3RTvvq34j0EKVD4DB1h2ODosWFunxmPQHM8hhgdqxIuu7p6TXurMUjT229IwgFMtCI9CxIGcVP+rPsIHz6I3w==",
+      "type": "package",
+      "path": "microsoft.net.illink.tasks/9.0.5",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        "Icon.png",
+        "LICENSE.TXT",
+        "Sdk/Sdk.props",
+        "THIRD-PARTY-NOTICES.TXT",
+        "analyzers/dotnet/cs/ILLink.CodeFixProvider.dll",
+        "analyzers/dotnet/cs/ILLink.RoslynAnalyzer.dll",
+        "build/Microsoft.NET.ILLink.Analyzers.props",
+        "build/Microsoft.NET.ILLink.Tasks.props",
+        "build/Microsoft.NET.ILLink.targets",
+        "microsoft.net.illink.tasks.9.0.5.nupkg.sha512",
+        "microsoft.net.illink.tasks.nuspec",
+        "tools/net9.0/ILLink.Tasks.deps.json",
+        "tools/net9.0/ILLink.Tasks.dll",
+        "tools/net9.0/Mono.Cecil.Mdb.dll",
+        "tools/net9.0/Mono.Cecil.Pdb.dll",
+        "tools/net9.0/Mono.Cecil.Rocks.dll",
+        "tools/net9.0/Mono.Cecil.dll",
+        "tools/net9.0/Sdk/Sdk.props",
+        "tools/net9.0/build/Microsoft.NET.ILLink.Analyzers.props",
+        "tools/net9.0/build/Microsoft.NET.ILLink.Tasks.props",
+        "tools/net9.0/build/Microsoft.NET.ILLink.targets",
+        "tools/net9.0/illink.deps.json",
+        "tools/net9.0/illink.dll",
+        "tools/net9.0/illink.runtimeconfig.json",
+        "useSharedDesignerContext.txt"
+      ]
+    },
     "SkiaSharp/2.88.9": {
       "sha512": "3MD5VHjXXieSHCleRLuaTXmL2pD0mB7CcOB1x2kA1I4bhptf4e3R27iM93264ZYuAq6mkUyX5XbcxnZvMJYc1Q==",
       "type": "package",
@@ -2871,6 +2914,7 @@
       "CommunityToolkit.Mvvm >= 8.2.1",
       "Material.Icons.Avalonia >= 2.4.1",
       "Microsoft.Data.Sqlite >= 9.0.4",
+      "Microsoft.NET.ILLink.Tasks >= 9.0.5",
       "sqlite-net-pcl >= 1.9.172"
     ]
   },
@@ -2960,6 +3004,12 @@
             "target": "Package",
             "version": "[9.0.4, )"
           },
+          "Microsoft.NET.ILLink.Tasks": {
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[9.0.5, )",
+            "autoReferenced": true
+          },
           "sqlite-net-pcl": {
             "target": "Package",
             "version": "[1.9.172, )"
@@ -2978,15 +3028,15 @@
         "warn": true,
         "downloadDependencies": [
           {
-            "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
+            "name": "Microsoft.AspNetCore.App.Runtime.linux-x64",
             "version": "[9.0.5, 9.0.5]"
           },
           {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "name": "Microsoft.NETCore.App.Host.linux-x64",
             "version": "[9.0.5, 9.0.5]"
           },
           {
-            "name": "Microsoft.NETCore.App.Runtime.win-x64",
+            "name": "Microsoft.NETCore.App.Runtime.linux-x64",
             "version": "[9.0.5, 9.0.5]"
           }
         ],
@@ -2999,7 +3049,7 @@
       }
     },
     "runtimes": {
-      "win-x64": {
+      "linux-x64": {
         "#import": []
       }
     }
@@ -3013,7 +3063,7 @@
       "libraryId": "AutoMapper",
       "targetGraphs": [
         "net9.0",
-        "net9.0/win-x64"
+        "net9.0/linux-x64"
       ]
     }
   ]
