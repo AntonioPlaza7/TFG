@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "cZGxHr4xSBQ=",
+  "dgSpecHash": "GELInZVBrv4=",
   "success": true,
   "projectFilePath": "/home/antonio/repositorios/TFG/StudentTrack/StudentTrack.csproj",
   "expectedPackageFiles": [
@@ -36,6 +36,7 @@
     "/home/antonio/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/8.0.0/microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
     "/home/antonio/.nuget/packages/microsoft.extensions.options/8.0.0/microsoft.extensions.options.8.0.0.nupkg.sha512",
     "/home/antonio/.nuget/packages/microsoft.extensions.primitives/8.0.0/microsoft.extensions.primitives.8.0.0.nupkg.sha512",
+    "/home/antonio/.nuget/packages/microsoft.net.illink.tasks/9.0.5/microsoft.net.illink.tasks.9.0.5.nupkg.sha512",
     "/home/antonio/.nuget/packages/skiasharp/2.88.9/skiasharp.2.88.9.nupkg.sha512",
     "/home/antonio/.nuget/packages/skiasharp.nativeassets.linux/2.88.9/skiasharp.nativeassets.linux.2.88.9.nupkg.sha512",
     "/home/antonio/.nuget/packages/skiasharp.nativeassets.macos/2.88.9/skiasharp.nativeassets.macos.2.88.9.nupkg.sha512",
